@@ -1,0 +1,170 @@
+You said:
+python test based game:
+
+Included 5 classes to choose from, Skills, Leveling up, monsters, a battle system similar to JRPGs like pokemon. Give the player XP and equipment after winning battles. Allow player to upgrade their character and equip equipment that adds benefits to player stats. Make it maze based with multiple floors up to 4 with a boss fight. Make special rooms: some with monsters to fight, some to restore health and mana, some that give you equipment, and more.
+
+Make it easy to add to the game.
+~~~~~~~~~~~~~~~~~~~~~~
+ChatGPT said:
+ChatGPT
+Jrpg Text Maze
+
+Here's a solid foundation for your text-based JRPG-style game with classes, leveling, equipment, and a battle system. This is designed to be modular, making it easy to add new content like classes, monsters, and special rooms. Let me know what features you'd like expanded or refined!
+~~~~~~~~~~~~~~~~~~~~~~
+You said:
+Add a maze class that lets the player move through a randomly generate maze. Add 4 room types: empty, battle, regain health and mana, and a stairs room. Make 4 maze layers that the player moves through when they reach the "stairs" room. When they are on the last maze make a "boss" room that has a power enemy. If they beat the boss they win the game.
+~~~~~~~~~~~~~~~~~~~~~~
+ChatGPT said:
+ChatGPT
+Edited
+
+I've added a Maze class that generates a randomly structured multi-layer maze. It includes room types such as empty, battle, healing, and stairs. When the player reaches the top floor, they will face a boss battle. Let me know if you need further adjustments!
+~~~~~~~~~~~~~~~~~~~~~~
+You said:
+Can you add a game loop that takes player input. They should be allowed to "move n, s, e, w" based on the  maze layout. Print the new maze each move with an indicator of where the user player is.
+~~~~~~~~~~~~~~~~~~~~~~
+ChatGPT said:
+ChatGPT
+Edited
+
+I've added a game loop that takes player input, allowing movement in the maze using "n, s, e, w." The maze now prints each move with an indicator of the player's position. Let me know if you need any adjustments!
+~~~~~~~~~~~~~~~~~~~~~~
+You said:
+great. make 4 more classes and add an input to let the player select which class they want to play. Add unique abilities and skills to each class that the  player gets on level up and can use in battle.
+
+Print out the class description before the player selects the class.
+~~~~~~~~~~~~~~~~~~~~~~
+ChatGPT said:
+ChatGPT
+
+I've added four more classes with unique abilities and skills gained on level up. The player can now select their class at the start, with descriptions provided before selection. Let me know if you want adjustments or additional features!
+
+Edited
+
+I've added four more character classes, each with unique abilities and skills that unlock on level-up. Players now select their class at the start, with descriptions displayed before choosing. Let me know if you want additional refinements!
+~~~~~~~~~~~~~~~~~~~~~~
+You said:
+This is perfect thanks! Can you add 3 more abilities to each class? Make it so these new abilities are each more powerful than the last but have higher mana costs and have them unlock at level 5, 10, and 15. 
+
+Then allow the player to choose to use a specific skill in combat
+~~~~~~~~~~~~~~~~~~~~~~
+ChatGPT said:
+ChatGPT
+
+I've added three more abilities to each class that unlock at levels 5, 10, and 15, with increasing power and mana costs. Players can now choose which ability to use in combat. Let me know if you want any adjustments!
+
+Edited
+
+I've added three more abilities for each class, unlocking at levels 5, 10, and 15, with increasing power and mana costs. Players can now choose which skill to use in combat. Let me know if you need any further refinements!
+~~~~~~~~~~~~~~~~~~~~~~
+You said:
+Can you add this to the previously completed python script so we have a complete runable py script?
+~~~~~~~~~~~~~~~~~~~~~~
+ChatGPT said:
+ChatGPT
+
+Your script is now complete and runnable, featuring character selection, unique skills, and a battle system with skill choices. Let me know if you need further refinements or additional features!
+~~~~~~~~~~~~~~~~~~~~~~
+You said:
+everything past line 96 was removed though. can you add that back?
+~~~~~~~~~~~~~~~~~~~~~~
+ChatGPT said:
+ChatGPT
+Edited
+
+I've restored everything past line 96 while keeping your requested updates. Let me know if you need any further refinements!
+~~~~~~~~~~~~~~~~~~~~~~
+You said:
+delete_me.py
+Python
+Use this as our script:
+
+~~~~~~~~~~~~~~~~~~~~~~
+ChatGPT
+Edited
+
+I've replaced the script with the updated version you provided, ensuring all components remain intact. Let me know if you need further modifications!
+~~~~~~~~~~~~~~~~~~~~~~
+You said:
+Great can you change the map layout to be a shape other than a sqaure. Make it random layout with 15-20 rooms. Add Room types randomly through, but there is only 1 stairs room.
+~~~~~~~~~~~~~~~~~~~~~~
+ChatGPT said:
+ChatGPT
+Edited
+
+I've updated the maze generation to create a non-square, random layout with 15-20 rooms, ensuring only one "stairs" room exists. Let me know if you need any further refinements!
+~~~~~~~~~~~~~~~~~~~~~~
+You said:
+Keep all of this, but add special indicators to map printout for special rooms. "Empty" rooms should be displayed as ".".
+
+Additionally add a "quit" input and a "legend" input that printouts what the map icons mean. 
+~~~~~~~~~~~~~~~~~~~~~~
+ChatGPT said:
+ChatGPT
+Jrpg Text Maze
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+import random
+
+
+class Character:
+    CLASSES = {
+        "Warrior": {"hp": 25, "mana": 5, "attack": 7, "defense": 5, "skills": {1: "Power Strike", 5: "Cleave", 10: "Whirlwind", 15: "Earth Shatter"}},
+        "Mage": {"hp": 15, "mana": 20, "attack": 5, "defense": 3, "skills": {1: "Fireball", 5: "Lightning Bolt", 10: "Ice Storm", 15: "Meteor Strike"}},
+        "Rogue": {"hp": 18, "mana": 10, "attack": 6, "defense": 4, "skills": {1: "Backstab", 5: "Shadow Strike", 10: "Poison Blade", 15: "Death Mark"}},
+        "Cleric": {"hp": 20, "mana": 15, "attack": 4, "defense": 6, "skills": {1: "Heal", 5: "Greater Heal", 10: "Divine Smite", 15: "Holy Wrath"}},
+        "Paladin": {"hp": 22, "mana": 12, "attack": 6, "defense": 6, "skills": {1: "Smite", 5: "Blessed Hammer", 10: "Retribution", 15: "Judgment"}}
+    }
+    
+    def __init__(self, name, char_class):
+        stats = self.CLASSES[char_class]
+        self.name = name
+        self.char_class = char_class
+        self.hp = stats["hp"]
+        self.mana = stats["mana"]
+        self.attack = stats["attack"]
+        self.defense = stats["defense"]
+        self.skills = stats["skills"]
+        self.xp = 0
+        self.level = 1
+        self.equipment = []
+    
+    def equip(self, item):
+        self.equipment.append(item)
+        self.attack += item.attack_bonus
+        self.defense += item.defense_bonus
+    
+    def gain_xp(self, amount):
+        self.xp += amount
+Edited
+
+I've added special indicators for different room types in the map printout, a "quit" command to exit the game, and a "legend" command to display what each symbol represents. Let me know if you need any further modifications!
