@@ -18,4 +18,4 @@ Developing a python text based Dungeon Game using only ChatGPT free version. Gam
 * Day 1 - 1/30/2025
   - Maze is not connected correctly. Can't reach all rooms and can get stuck next to stairs room
   - Moving over a maze block does not clear out the block --> should become empty
-  - Battle does no intiate when moving into a battle room
+  - Battle does not intiate when moving into a battle room
