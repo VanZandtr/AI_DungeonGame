@@ -460,9 +460,20 @@ class Maze:
                 self.player.add_to_inventory(drop)
 
 def game_loop():
+    print(r"""
+
+"You awaken in a place long forgotten. 
+The stone walls breathe with unseen life, whispering secrets of those who came before.
+Darkness coils in the corners, hiding creatures that hunger for your presence.
+A single path lies ahead.
+
+Will you conquer the dungeon… or become part of its legend?"
+""")
+    print()
     print("Choose your class:")
     for cls, stats in Character.CLASSES.items():
         print(f"{cls}: HP {stats['hp']}, Mana {stats['mana']}, Attack {stats['attack']}, Defense {stats['defense']}")
+        print()
     
     chosen_class = ""
     while chosen_class not in Character.CLASSES:

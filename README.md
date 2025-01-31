@@ -1,5 +1,22 @@
-# AI_DungeonGame
-Developing a python text based Dungeon Game using only ChatGPT free version. Game is rebase off my original Zork inspired Dungeon Game that is in another repository that anyone can access. 
+# AI Dungeon Game
+
+Welcome to **AI Dungeon Game**, a text-based RPG where you explore a procedurally generated dungeon, fight dangerous creatures, and level up your hero!
+
+## **Current Features:**
+- **Procedural Dungeon Generation**: Explore a multi-layered dungeon with randomized rooms, battles, and treasures.
+- **Playable Classes**: Choose from **Warrior, Mage, Rogue, and Cleric**, each with unique skills and abilities.
+- **Turn-Based Combat**: Face off against **Goblins, Skeletons, Trolls, and even Dragons** with dynamic attack, defense, and skill mechanics.
+- **Equipment System**: Find and equip weapons and armor to enhance your stats.
+- **Item Drops**: Enemies have a chance to drop **healing and mana potions** to keep you going.
+- **XP & Leveling System**: Gain experience, level up, and unlock powerful new abilities.
+- **Boss Fights**: Conquer the dungeon and face a **mighty final boss**.
+
+## **AI Suggested Upcoming Features:**
+- More classes, skills, and enemy types
+- Quests and story elements
+- Expanded inventory and crafting system
+
+## ---------- END AI Generated Text ----------
 
 ## Goals
 * To emulate my other game using only AI (ChatGPT for now)
