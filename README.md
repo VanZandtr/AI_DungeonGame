@@ -46,7 +46,7 @@ Welcome to **AI Dungeon Game**, a text-based RPG where you explore a procedurall
 
 * 2/5/2025
    * Updates:
-       * "Fixed" persistent health - the player healed to full on level up and I was mistaking this as a bug. For now I have it so a level only restores 50% of lost health and mana
+       * "Fixed" persistent health - the player healed to full on level up and I was mistaking this as a bug. For now I have it so a level up only restores 50% of lost health and mana
        * Dragon can only be found as last level boss
        * Made enemies easier on level 1
        * Modified maze to show full map instead of using ? for unexplored rooms - fixed issue where room wouldn't become an "empty" room
