@@ -44,3 +44,13 @@ Welcome to **AI Dungeon Game**, a text-based RPG where you explore a procedurall
        * Enemies are too strong on the first level
        * Probably should remove hiddeness of map
 
+* 2/5/2025
+   * Updates:
+       * "Fixed" persistent health - the player healed to full on level up and I was mistaking this as a bug. For now I have it so a level only restores 50% of lost health and mana
+       * Dragon can only be found as last level boss
+       * Made enemies easier on level 1
+       * Modified maze to show full map instead of using ? for unexplored rooms - fixed issue where room wouldn't become an "empty" room
+    
+  * Bugs:
+       * Troll is supposed to be non final level boss, but room isn't marked as 'X'
+
