@@ -54,3 +54,29 @@ Welcome to **AI Dungeon Game**, a text-based RPG where you explore a procedurall
   * Bugs:
        * Troll is supposed to be non final level boss, but room isn't marked as 'X'
 
+* 2/7/2025
+  * Updates from Claude:
+    * Today we made several key updates to the dungeon game:
+      * Fixed boss monster system:
+        * Ensured Troll only appears as marked boss ('X')
+        * Removed Troll from regular battles
+        * Added Dragon as final boss
+        * Rebalanced monster difficulty scaling
+      * Improved inventory system:
+        * Moved inventory management from Maze to Character class
+        * Added inventory access during movement phase
+      * Enhanced map visibility:
+        * Map now displays before each move prompt
+        * Added cleaner map rendering
+      * Added save/load system:
+        * Saves character stats, inventory, and progress
+        * Saves maze state and exploration
+        * Allows loading previous game on startup
+        * Uses JSON file format for save data
+  * Updates from me:
+    * Added equipping items before fights
+    * TODO - add description when checking inventory to equipped items
+    * TODO - combine inventory equip and use potion
+    * TODO test save feature
+
+
