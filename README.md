@@ -91,4 +91,6 @@ Welcome to **AI Dungeon Game**, a text-based RPG where you explore a procedurall
     * TODO Add helment, gloves, boots, offhand, ring, and necklace to armor
     * TODO Lower xp gain rate and make monsters easier
     * TODO ignore case sensitive in inputs
+    * TODO up pet drop rates
+    * TODO see if I can reduce code lines - split into multiple files? Can claude handle that?
 
