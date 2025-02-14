@@ -79,4 +79,16 @@ Welcome to **AI Dungeon Game**, a text-based RPG where you explore a procedurall
     * TODO - combine inventory equip and use potion
     * TODO test save feature
 
+* 2/14/2025
+  * Updates from Claude
+    * Added a pet system with two starter companions (Mystic Cat and Spirit Wolf), each providing unique passive bonuses to the player (mana or attack boost) and having their own combat abilities
+    * Implemented pet combat mechanics where pets can attack enemies, take damage, and be knocked out (but not die permanently), with pets having a maximum of 8-10 HP depending on their type
+    * Created a pet acquisition system with a 2% drop chance from regular monsters and 5% from bosses, limiting players to one pet at a time
+    * Added pet healing through health potions (pets receive 50% of the potion's healing value) and implemented a system for managing pet passive bonuses when they're knocked out or revived
+    * Fixed various bugs and added quality of life improvements, including better battle information display, clearer potion descriptions, proper save/load functionality for pets, and improved error handling
+  * Updates from me:
+    * Next day should be spent testing features and fixes - save seems to work pretty well!
+    * TODO Add helment, gloves, boots, offhand, ring, and necklace to armor
+    * TODO Lower xp gain rate and make monsters easier
+    * TODO ignore case sensitive in inputs
 
